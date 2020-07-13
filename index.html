@@ -73,6 +73,17 @@
 
     </main>
     
-        <script src="script.js"></script>        
+        <script src="script.js"></script>   
+        <script>
+          function registerServiceWorker() {
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js', { scope: '/' }).then(() => {
+                  console.log('Service Worker enregistré correctement.');
+                }).catch(error => {
+                  console.log("Erreur lors de l'enregistrement du Service Worker : ", error);
+                });
+              }
+            }
+          </script>     
 </body>
 </html>
